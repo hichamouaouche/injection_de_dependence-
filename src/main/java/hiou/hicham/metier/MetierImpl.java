@@ -2,7 +2,7 @@ package hiou.hicham.metier;
 
 import hiou.hicham.dao.IDao;
 
-public class IMetierImpl implements IMetier {
+public class MetierImpl implements IMetier {
     private IDao dao; //couplage faible(depend une interface mais no class
 
     /**
@@ -11,11 +11,11 @@ public class IMetierImpl implements IMetier {
      * au moment de l'instantiation
      */
 
-    public IMetierImpl(IDao dao) {
+    public MetierImpl(IDao dao) {
         this.dao = dao;
     }
 
-    public IMetierImpl() {
+    public MetierImpl() {
     }
 
     @Override
@@ -29,6 +29,7 @@ public class IMetierImpl implements IMetier {
      *
      * pour injecter dans l'attribut dao
      * un objet d'une class qui implement interface IDO
+     * apres instanstiation
      */
     public void setDao(IDao dao) {
         this.dao = dao;
