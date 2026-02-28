@@ -1,0 +1,2 @@
+hiou.hicham.ext.DaoImplV2
+hiou.hicham.metier.MetierImpl
