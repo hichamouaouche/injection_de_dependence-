@@ -1,8 +1,12 @@
 package hiou.hicham.metier;
 
 import hiou.hicham.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("metier")
 public class MetierImpl implements IMetier {
+    @Autowired
     private IDao dao; //couplage faible(depend une interface mais no class
 
     /**
