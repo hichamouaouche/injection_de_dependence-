@@ -7,7 +7,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class PresSpringAnnotation {
     public static void main(String[] args) {
         ApplicationContext applicationContext=
-                new AnnotationConfigApplicationContext("net.app");
+                new AnnotationConfigApplicationContext("hiou.hicham");
         IMetier metier = applicationContext.getBean(IMetier.class);
         System.out.println("resultat = " + metier.calcul());
+    }
 }

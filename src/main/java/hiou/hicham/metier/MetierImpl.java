@@ -2,39 +2,26 @@ package hiou.hicham.metier;
 
 import hiou.hicham.dao.IDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("metier")
 public class MetierImpl implements IMetier {
-    @Autowired
-    private IDao dao; //couplage faible(depend une interface mais no class
-
-    /**
-     * pour injecter dans l'attrubut dao
-     * un objet d'une classe qui implemente l'interface IDO
-     * au moment de l'instantiation
-     */
-
-    public MetierImpl(IDao dao) {
-        this.dao = dao;
-    }
-
-    public MetierImpl() {
-    }
-
+    private IDao dao;
     @Override
     public double calcul() {
-        double t = dao.getData();
-        double res = t * 12 *Math.PI/2 *Math.cos(t);
+        double temp = dao.getData();
+        double res = temp * 2 * Math.PI * Math.pow(temp, 2);
         return res;
     }
 
-    /**
-     *
-     * pour injecter dans l'attribut dao
-     * un objet d'une class qui implement interface IDO
-     * apres instanstiation
-     */
+    public MetierImpl(@Qualifier("d2") IDao dao) {
+        this.dao = dao;
+    }
+
+//    public MetierImpl() {
+//    }
+
     public void setDao(IDao dao) {
         this.dao = dao;
     }
